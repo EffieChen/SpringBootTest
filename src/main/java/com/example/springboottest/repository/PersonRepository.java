@@ -1,5 +1,10 @@
-package com.example.repository;
+package com.example.springboottest.repository;
 
+import com.example.springboottest.entity.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
-public interface PersonRepository extends JpaRepository{
+
+import java.util.List;
+
+public interface PersonRepository extends JpaRepository<Person, Long> {
+    List<Person> findByName(String name);
 }
